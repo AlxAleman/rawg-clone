@@ -1,0 +1,263 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thumb-rawg-light-gray {
+  scrollbar-color: #16213e transparent;
+}
+
+.scrollbar-track-transparent {
+  scrollbar-track-color: transparent;
+}
+
+/* Webkit scrollbar for Chromium browsers */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #16213e;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: #1a1a2e;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    #1a1a2e 4%,
+    #16213e 25%,
+    #1a1a2e 36%
+  );
+  background-size: 1000px 100%;
+}
+
+/* Game card hover effects */
+.game-card-hover {
+  transition: all 0.3s ease;
+}
+
+.game-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Platform icons styling */
+.platform-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Rating badges */
+.rating-excellent {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.rating-good {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.rating-average {
+  background: linear-gradient(135deg, #fb923c, #ea580c);
+}
+
+.rating-poor {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* Video player overlay */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-overlay.visible {
+  opacity: 1;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-rawg-blue hover:bg-rawg-blue/80 text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-rawg-light-gray hover:bg-rawg-gray text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+.btn-ghost {
+  @apply bg-transparent hover:bg-rawg-light-gray text-gray-300 hover:text-white font-medium py-2 px-4 rounded-lg transition-colors;
+}
+
+/* Image loading states */
+.image-loading {
+  background: linear-gradient(
+    90deg,
+    #1a1a2e 25%,
+    #16213e 37%,
+    #1a1a2e 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Focus states for accessibility */
+.focus-visible:focus {
+  outline: 2px solid #0e4b99;
+  outline-offset: 2px;
+}
+
+/* Mobile responsiveness helpers */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
+  }
+  
+  .mobile-full {
+    width: 100%;
+  }
+}
+
+/* Game details page specific styles */
+.game-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 75, 153, 0.1) 0%,
+    rgba(128, 90, 213, 0.1) 100%
+  );
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* Tooltip styles */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+/* Genre tags */
+.genre-tag {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-rawg-light-gray text-gray-300 hover:bg-rawg-blue hover:text-white transition-colors cursor-pointer;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #1a1a2e;
+  border-top: 4px solid #0e4b99;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0e4b99, #805ad5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom selection */
+::selection {
+  background: rgba(14, 75, 153, 0.3);
+}
+
+::-moz-selection {
+  background: rgba(14, 75, 153, 0.3);
+}

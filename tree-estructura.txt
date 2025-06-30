@@ -1,0 +1,55 @@
+﻿
+Path                  
+----                  
+G:\PROJECTS\rawg-clone
+ public
+    vite.svg
+ src
+    assets
+       react.svg
+    components
+       GameCard
+          GameCard.jsx
+          GamesList.jsx
+       Layout
+          Header.jsx
+          Sidebar.jsx
+       UI
+           LazyImage.jsx
+           LoadingSpinner.jsx
+    contexts
+       FavoritesContext.jsx
+    Filters
+       AdvancedFilters.jsx
+    hooks
+    pages
+       BrowsePage.jsx
+       GameDetailsPage.jsx
+       GenrePage.jsx
+       HomePage.jsx
+       NewReleasesPage.jsx
+       PlatformPage.jsx
+       PlatformsPage.jsx
+       ReviewPage.jsx
+       SearchPage.jsx
+       StoresPage.jsx
+       TopGamesPage.jsx
+    services
+       api.js
+    utils
+    App.css
+    App.jsx
+    index.css
+    main.jsx
+ .gitignore
+ eslint.config.js
+ index.html
+ package-lock.json
+ package.json
+ postcss.config.cjs
+ README.md
+ tailwind.config.js
+ tree-estructura.txt
+ vite.config.js
+
+
